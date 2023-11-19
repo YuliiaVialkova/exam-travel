@@ -1,0 +1,4 @@
+@function rem($mainFontSize) {
+  $remsize: size / $mainFontSize;
+  @return $remSize * 1rem;
+}
