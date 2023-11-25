@@ -1,0 +1,13 @@
+@import './base.scss';
+@import './vars.scss';
+@import './mixins.scss';
+
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: $mainFontFamily;
+  font-size: $mainFontSize;
+}
