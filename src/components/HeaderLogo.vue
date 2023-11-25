@@ -16,7 +16,6 @@ import IconHeaderLogo from '../components/icons/IconLogoHeader.vue'
   &__link {
     display: block;
     text-decoration: none;
-    padding-top: 9px;
     font-size: toRem(18px);
     font-weight: 600;
     letter-spacing: 0.36px;
