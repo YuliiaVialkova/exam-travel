@@ -1,9 +1,0 @@
-@import './base.css';
-@import './mixins.scss';
-@import './vars.scss';
-
-html {
-  * {
-    box-sizing: border-box;
-  }
-}

@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+import HeaderLogo from './HeaderLogo.vue'
+</script>
 
 <template>
-  <div>AppHeader</div>
+  <div class="header">
+    <HeaderLogo class="header__logo" />
+  </div>
 </template>
-
-<style lang="scss"></style>
