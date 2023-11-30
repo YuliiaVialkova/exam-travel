@@ -1,10 +1,13 @@
 <script setup>
 import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/AppFooter.vue'
 </script>
 
 <template>
   <div class="container">
     <AppHeader />
+    <main class="main-content"></main>
+    <AppFooter />
   </div>
 </template>
 
@@ -14,5 +17,9 @@ import AppHeader from '../components/AppHeader.vue'
   display: flex;
   flex-direction: column;
   padding: 20px;
+  overflow: hidden;
+}
+.main-content {
+  flex-grow: 1;
 }
 </style>
