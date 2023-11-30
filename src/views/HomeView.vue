@@ -1,12 +1,15 @@
 <script setup>
 import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
+import PopularHotels from '../components/PopularHotels.vue'
 </script>
 
 <template>
   <div class="container">
     <AppHeader />
-    <main class="main-content"></main>
+    <main class="main-content">
+      <PopularHotels />
+    </main>
     <AppFooter />
   </div>
 </template>
