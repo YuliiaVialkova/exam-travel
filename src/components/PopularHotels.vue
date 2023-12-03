@@ -101,25 +101,35 @@ import IconStar from '../components/icons/IconStar.vue'
 .popular-hotels {
   margin-bottom: 30px;
 
+  &__title {
+    font-size: toRem(28px);
+    font-weight: 600;
+    color: var(--title-color);
+  }
+
   &__list {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 100%;
   }
 
   &__caption {
     font-size: toRem(20px);
     margin: 15px 0;
+    font-weight: 600;
+    color: var(--title-color);
   }
   &__img-wrp {
     width: 100%;
-    max-width: 100%;
     height: auto;
     overflow: hidden;
   }
   &__img {
     width: 100%;
-    max-width: 100%;
     vertical-align: top;
   }
   &__country {
@@ -146,6 +156,27 @@ import IconStar from '../components/icons/IconStar.vue'
     font-size: toRem(16px);
 
     color: var(--white-color);
+  }
+}
+@media screen and (min-width: 530px) {
+  .popular-hotels {
+    &__item {
+      width: 48%;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .popular-hotels {
+    &__item {
+      width: 30%;
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .popular-hotels {
+    &__item {
+      width: 23%;
+    }
   }
 }
 </style>
