@@ -3,12 +3,14 @@ import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 import PopularHotels from '../components/PopularHotels.vue'
 import GuideBook from '../components/GuideBook.vue'
+import PopularCountries from '../components/PopularCountries.vue'
 </script>
 
 <template>
   <div class="container">
     <AppHeader />
     <main class="main-content">
+      <PopularCountries />
       <GuideBook />
       <PopularHotels />
     </main>

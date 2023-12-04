@@ -115,7 +115,7 @@
     margin-bottom: 10px;
   }
   &__text-link {
-    font-size: toRem(16px);
+    font-size: toRem(14px);
     font-weight: 400;
     color: var(--white-color);
     text-decoration: none;
