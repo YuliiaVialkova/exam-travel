@@ -5,6 +5,7 @@ import PopularHotels from '../components/PopularHotels.vue'
 import GuideBook from '../components/GuideBook.vue'
 import PopularCountries from '../components/PopularCountries.vue'
 import AppPromo from '../components/AppPromo.vue'
+import AppSearch from '../components/AppSearch.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import AppPromo from '../components/AppPromo.vue'
     <AppHeader class="header" />
     <main class="main-content">
       <AppPromo />
+      <AppSearch class="main-search" />
       <PopularCountries />
       <GuideBook />
       <PopularHotels />
@@ -35,5 +37,8 @@ import AppPromo from '../components/AppPromo.vue'
 }
 .main-content {
   flex-grow: 1;
+}
+.main-search {
+  margin-top: 20px;
 }
 </style>
