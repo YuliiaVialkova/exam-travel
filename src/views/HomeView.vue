@@ -4,12 +4,14 @@ import AppFooter from '../components/AppFooter.vue'
 import PopularHotels from '../components/PopularHotels.vue'
 import GuideBook from '../components/GuideBook.vue'
 import PopularCountries from '../components/PopularCountries.vue'
+import AppPromo from '../components/AppPromo.vue'
 </script>
 
 <template>
   <div class="container">
-    <AppHeader />
+    <AppHeader class="header" />
     <main class="main-content">
+      <AppPromo />
       <PopularCountries />
       <GuideBook />
       <PopularHotels />
@@ -23,10 +25,13 @@ import PopularCountries from '../components/PopularCountries.vue'
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 15px;
   overflow: hidden;
   max-width: 1240px;
   margin: 0 auto;
+}
+.header {
+  margin-bottom: 15px;
 }
 .main-content {
   flex-grow: 1;

@@ -95,6 +95,9 @@
     flex-wrap: wrap;
     gap: 20px;
   }
+  &__item {
+    width: 100%;
+  }
   &__img-wrp {
     width: 100%;
     height: auto;

@@ -42,7 +42,7 @@ import HeaderContacts from './HeaderContacts.vue'
 @media screen and (min-width: 653px) {
   .header {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 
     &__menu {
       order: 5;
