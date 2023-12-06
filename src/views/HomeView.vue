@@ -11,6 +11,7 @@ import AppSearch from '../components/AppSearch.vue'
 <template>
   <div class="container">
     <AppHeader class="header" />
+    <h1 class="visually-hidden">My Dream Place</h1>
     <main class="main-content">
       <AppPromo />
       <AppSearch class="main-search" />
@@ -34,6 +35,8 @@ import AppSearch from '../components/AppSearch.vue'
 }
 .header {
   margin-bottom: 15px;
+}
+.page-title {
 }
 .main-content {
   flex-grow: 1;

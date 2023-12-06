@@ -7,7 +7,7 @@ import IconBurger from '../components/icons/IconBurger.vue'
     <IconBurger class="header-menu__icon" />
     <ul class="header-menu__list">
       <li class="header-menu__item">
-        <a href="" class="header-menu__link">Discover</a>
+        <a href="/search" class="header-menu__link">Знайти тур</a>
       </li>
       <li class="header-menu__item">
         <a href="" class="header-menu__link">Activities</a>

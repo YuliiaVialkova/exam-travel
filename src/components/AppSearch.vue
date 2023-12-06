@@ -1,7 +1,3 @@
-<script setup>
-import IconLocation from './icons/IconLocation.vue'
-</script>
-
 <template>
   <section class="search">
     <label for="search-where" class="search__label-item">
@@ -34,7 +30,9 @@ import IconLocation from './icons/IconLocation.vue'
         <option value="">2 дорослих</option>
       </select>
     </label>
-    <div class="search__btn-wrp search__label-item"><a class="search__btn" href="/">Знайти</a></div>
+    <div class="search__btn-wrp search__label-item">
+      <a class="search__btn" href="/search">Знайти</a>
+    </div>
   </section>
 </template>
 
