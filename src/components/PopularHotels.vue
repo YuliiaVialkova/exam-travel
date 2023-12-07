@@ -1,5 +1,7 @@
 <script setup>
-import IconStar from '../components/icons/IconStar.vue'
+import StarSolid from '../components/icons/StarSolid.vue'
+import StarEmpty from '../components/icons/StarEmpty.vue'
+import ButtonMore from '../components/ButtonMore.vue'
 </script>
 <template>
   <section class="popular-hotels">
@@ -13,18 +15,17 @@ import IconStar from '../components/icons/IconStar.vue'
             class="popular-hotels__img"
           />
         </div>
-        <h3 class="popular-hotels__caption">
-          Albatros Palace Resort Sharm El Sheikh, 5 <sup><IconStar /></sup>
-        </h3>
-        <div class="popular-hotels__country">Єгипет</div>
+        <h3 class="popular-hotels__caption">Albatros Palace Resort Sharm El Sheikh</h3>
+        <div class="popular-hotels__stars">
+          <StarSolid /><StarSolid /><StarSolid /><StarSolid /><StarEmpty />
+        </div>
+        <div class="popular-hotels__country">Єгипет, Шарм Ель Шейх</div>
         <div class="popular-hotels__details">
           <div class="popular-hotels__price">
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <div class="popular-hotels__more">
-            <a class="popular-hotels__more-link" href="#">Детальніше</a>
-          </div>
+          <ButtonMore />
         </div>
       </article>
       <article class="popular-hotels__item">
@@ -35,18 +36,17 @@ import IconStar from '../components/icons/IconStar.vue'
             class="popular-hotels__img"
           />
         </div>
-        <h3 class="popular-hotels__caption">
-          Albatros Palace Resort Sharm El Sheikh, 5 <sup><IconStar /></sup>
-        </h3>
-        <div class="popular-hotels__country">Єгипет</div>
+        <h3 class="popular-hotels__caption">Albatros Palace Resort Sharm El Sheikh</h3>
+        <div class="popular-hotels__stars">
+          <StarSolid /><StarSolid /><StarSolid /><StarSolid /><StarEmpty />
+        </div>
+        <div class="popular-hotels__country">Єгипет, Шарм Ель Шейх</div>
         <div class="popular-hotels__details">
           <div class="popular-hotels__price">
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <div class="popular-hotels__more">
-            <a class="popular-hotels__more-link" href="#">Детальніше</a>
-          </div>
+          <ButtonMore />
         </div>
       </article>
       <article class="popular-hotels__item">
@@ -57,18 +57,17 @@ import IconStar from '../components/icons/IconStar.vue'
             class="popular-hotels__img"
           />
         </div>
-        <h3 class="popular-hotels__caption">
-          Albatros Palace Resort Sharm El Sheikh, 5 <sup><IconStar /></sup>
-        </h3>
-        <div class="popular-hotels__country">Єгипет</div>
+        <h3 class="popular-hotels__caption">Albatros Palace Resort Sharm El Sheikh</h3>
+        <div class="popular-hotels__stars">
+          <StarSolid /><StarSolid /><StarSolid /><StarSolid /><StarEmpty />
+        </div>
+        <div class="popular-hotels__country">Єгипет, Шарм Ель Шейх</div>
         <div class="popular-hotels__details">
           <div class="popular-hotels__price">
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <div class="popular-hotels__more">
-            <a class="popular-hotels__more-link" href="#">Детальніше</a>
-          </div>
+          <ButtonMore />
         </div>
       </article>
       <article class="popular-hotels__item">
@@ -79,18 +78,17 @@ import IconStar from '../components/icons/IconStar.vue'
             class="popular-hotels__img"
           />
         </div>
-        <h3 class="popular-hotels__caption">
-          Albatros Palace Resort Sharm El Sheikh, 5 <sup><IconStar /></sup>
-        </h3>
-        <div class="popular-hotels__country">Єгипет</div>
+        <h3 class="popular-hotels__caption">Albatros Palace Resort Sharm El Sheikh</h3>
+        <div class="popular-hotels__stars">
+          <StarSolid /><StarSolid /><StarSolid /><StarSolid /><StarEmpty />
+        </div>
+        <div class="popular-hotels__country">Єгипет, Шарм Ель Шейх</div>
         <div class="popular-hotels__details">
           <div class="popular-hotels__price">
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <div class="popular-hotels__more">
-            <a class="popular-hotels__more-link" href="#">Детальніше</a>
-          </div>
+          <ButtonMore />
         </div>
       </article>
     </div>
@@ -134,7 +132,7 @@ import IconStar from '../components/icons/IconStar.vue'
   }
   &__country {
     font-style: italic;
-    margin-bottom: 10px;
+    margin: 10px 0;
   }
   &__details {
     display: flex;
@@ -145,17 +143,6 @@ import IconStar from '../components/icons/IconStar.vue'
   &__price > span {
     font-size: toRem(18px);
     font-weight: 700;
-  }
-  &__more {
-    padding: 10px 18px;
-    border-radius: 6px;
-    background-color: var(--btn-bg-color);
-  }
-  &__more-link {
-    text-decoration: none;
-    font-size: toRem(16px);
-
-    color: var(--white-color);
   }
 }
 @media screen and (min-width: 530px) {
