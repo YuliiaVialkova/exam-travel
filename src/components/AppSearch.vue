@@ -1,36 +1,44 @@
 <template>
   <section class="search">
-    <label for="search-where" class="search__label-item">
-      <input type="text" placeholder="Куди" id="search-where" class="search__where search__item" />
+    <label for="search-where" class="search__label-item"
+      >Куди
+      <input
+        type="text"
+        placeholder="Єгипет, всі курорти"
+        id="search-where"
+        class="search__where search__item"
+      />
     </label>
-    <label for="search-from" class="search__label-item">
-      <input type="text" placeholder="Звідки" id="search-from" class="search__from search__item" />
+    <label for="search-from" class="search__label-item"
+      >Звідки
+      <input type="text" placeholder="Варшава" id="search-from" class="search__from search__item" />
     </label>
-    <label for="search-check-in-date" class="search__label-item">
+    <label for="search-check-in-date" class="search__label-item"
+      >Дата заїзду
       <input
         type="date"
         name="check-in-date"
-        placeholder="Дата заїзду"
         id="search-check-in-date"
         class="search__check-in search__item"
       />
     </label>
-    <label for="search-check-out-date" class="search__label-item">
+    <label for="search-check-out-date" class="search__label-item"
+      >Дата виїзду
       <input
         type="date"
         name="check-out-date"
         id="search-check-out-date"
         class="search__check-out search__item"
-        placeholder="Дата виїзду"
       />
     </label>
-    <label for="search-tourists" class="search__label-item">
+    <label for="search-tourists" class="search__label-item"
+      >Туристів
       <select name="tourists" id="search-tourists" class="search__tourists search__item">
         <option value="">1 дорослий</option>
         <option value="">2 дорослих</option>
       </select>
     </label>
-    <div class="search__btn-wrp search__label-item">
+    <div class="search__btn-wrp">
       <a class="search__btn" href="/search">Знайти</a>
     </div>
   </section>
@@ -56,29 +64,20 @@
     font-weight: 400;
     line-height: 140%;
     letter-spacing: 0.28px;
-  }
-
-  &__where {
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      display: block;
-      background: url(../components/icons/IconLocation.vue) no-repeat;
-      width: 20px;
-      height: 20px;
-      top: 0px;
-      left: 0px;
-    }
+    border-top: 2px solid var(--btn-bg-color);
+    border-left: 2px solid var(--btn-bg-color);
+    border-right: 2px solid var(--grey-color);
+    border-bottom: 2px solid var(--grey-color);
+    height: 49px;
   }
 
   &__btn-wrp {
-    margin: 5px;
     background-color: var(--btn-bg-color);
     width: 100%;
     text-align: center;
     border-radius: 6px;
+    height: 49px;
+    align-self: end;
   }
   &__btn {
     display: block;
@@ -91,6 +90,10 @@
     text-decoration: none;
     padding: 12px 18px;
   }
+  &__label-item {
+    font-size: toRem(15px);
+    color: var(--grey-color);
+  }
 }
 
 @media screen and (min-width: 530px) {
@@ -102,6 +105,7 @@
       flex-grow: 1;
     }
     &__btn-wrp {
+      flex-grow: 1;
       width: auto;
     }
   }

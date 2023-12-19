@@ -5,11 +5,7 @@
       <article class="popular-countries__item">
         <a href="/" class="popular-countries__img-link">
           <div class="popular-countries__img-wrp">
-            <img
-              src="../../public/countries/Australia.png"
-              alt="Australia"
-              class="popular-countries__img"
-            />
+            <img src="/countries/Australia.png" alt="Australia" class="popular-countries__img" />
           </div>
         </a>
         <div class="popular-countries__content">
@@ -24,11 +20,7 @@
       <article class="popular-countries__item">
         <a href="/" class="popular-countries__img-link">
           <div class="popular-countries__img-wrp">
-            <img
-              src="../../public/countries/Japan.png"
-              alt="Japan"
-              class="popular-countries__img"
-            />
+            <img src="/countries/Japan.png" alt="Japan" class="popular-countries__img" />
           </div>
         </a>
         <div class="popular-countries__content">
@@ -44,7 +36,7 @@
         <a href="/" class="popular-countries__img-link">
           <div class="popular-countries__img-wrp">
             <img
-              src="../../public/countries/New_Zealand.png"
+              src="/countries/New_Zealand.png"
               alt="New_Zealand"
               class="popular-countries__img"
             />
@@ -62,11 +54,7 @@
       <article class="popular-countries__item">
         <a href="/" class="popular-countries__img-link">
           <div class="popular-countries__img-wrp">
-            <img
-              src="../../public/countries/Australia.png"
-              alt="Australia"
-              class="popular-countries__img"
-            />
+            <img src="/countries/Australia.png" alt="Australia" class="popular-countries__img" />
           </div>
         </a>
         <div class="popular-countries__content">

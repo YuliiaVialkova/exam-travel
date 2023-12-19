@@ -63,7 +63,6 @@ import ContactsAddress from '../components/ContactsAddress.vue'
   margin: 0;
   list-style-type: none;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 

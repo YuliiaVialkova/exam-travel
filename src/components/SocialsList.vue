@@ -45,4 +45,11 @@ import IconViber from '../components/icons/IconViber.vue'
     height: 26px;
   }
 }
+@media screen and (min-width: 992px) {
+  .socials-list {
+    &__icon::hover {
+      fill: var(--blue-color);
+    }
+  }
+}
 </style>

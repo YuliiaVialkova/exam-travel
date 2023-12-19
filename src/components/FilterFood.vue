@@ -1,24 +1,33 @@
+<script setup>
+import { useToursStore } from '@/stores/tours'
+
+const tourStore = useToursStore()
+
+const filterFood = function (event) {
+  tourStore.filterFood(event.target.value)
+}
+</script>
 <template>
   <div class="filter-food">
     <div class="filter-food__caption filter-caption">Тип харчування</div>
     <div class="filter-food__box">
-      <input type="checkbox" id="hotels-food" name="hotels-food" value="OB" />
-      <label for="hotels-food">ОВ (без харчування)</label>
+      <input type="checkbox" id="hotels-food" name="hotels-food" value="OB" @change="filterFood" />
+      <label for="hotels-food">OB (без харчування)</label>
     </div>
     <div class="filter-food__box">
-      <input type="checkbox" id="hotels-food" name="hotels-food" value="BB" />
-      <label for="hotels-food">ВВ (сніданок)</label>
+      <input type="checkbox" id="hotels-food" name="hotels-food" value="BB" @change="filterFood" />
+      <label for="hotels-food">BB (сніданок)</label>
     </div>
     <div class="filter-food__box">
-      <input type="checkbox" id="hotels-food" name="hotels-food" value="HB" />
-      <label for="hotels-food">НВ (сніданок + вечеря)</label>
+      <input type="checkbox" id="hotels-food" name="hotels-food" value="HB" @change="filterFood" />
+      <label for="hotels-food">HB (сніданок + вечеря)</label>
     </div>
     <div class="filter-food__box">
-      <input type="checkbox" id="hotels-food" name="hotels-food" value="FB" />
+      <input type="checkbox" id="hotels-food" name="hotels-food" value="FB" @change="filterFood" />
       <label for="hotels-food">FB (3-раз. харчування)</label>
     </div>
     <div class="filter-food__box">
-      <input type="checkbox" id="hotels-food" name="hotels-food" value="AI" checked />
+      <input type="checkbox" id="hotels-food" name="hotels-food" value="AI" @change="filterFood" />
       <label for="hotels-food">AI (все включено)</label>
     </div>
   </div>

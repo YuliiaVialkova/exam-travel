@@ -19,6 +19,7 @@
     justify-content: center;
   }
   &__item {
+    cursor: pointer;
     display: block;
     padding: 10px;
     flex-shrink: 0;

@@ -1,31 +1,28 @@
 <script setup>
 import StarSolid from '../components/icons/StarSolid.vue'
 import StarEmpty from '../components/icons/StarEmpty.vue'
-import ButtonMore from '../components/ButtonMore.vue'
+import BlueButton from '../components/BlueButton.vue'
+import HotelStars from '../components/HotelStars.vue'
+
+const props = defineProps(['tours'])
 </script>
 <template>
   <section class="popular-hotels">
     <h2 class="popular-hotels__title">Популярні готелі</h2>
     <div class="popular-hotels__list">
-      <article class="popular-hotels__item">
+      <article class="popular-hotels__item" v-for="tour in props.tours" :key="tour.id">
         <div class="popular-hotels__img-wrp">
-          <img
-            src="../../public/hotels/Albatros Palace Resort Sharm El Sheikh.png"
-            alt=""
-            class="popular-hotels__img"
-          />
+          <img :src="tour.img" :alt="tour.title" class="popular-hotels__img" />
         </div>
-        <h3 class="popular-hotels__caption">Albatros Palace Resort Sharm El Sheikh</h3>
-        <div class="popular-hotels__stars">
-          <StarSolid /><StarSolid /><StarSolid /><StarSolid /><StarEmpty />
-        </div>
-        <div class="popular-hotels__country">Єгипет, Шарм Ель Шейх</div>
+        <h3 class="popular-hotels__caption">{{ tour.title }}</h3>
+        <div class="popular-hotels__stars"><HotelStars :stars="tour.stars" /></div>
+        <div class="popular-hotels__country">{{ tour.country }}, {{ tour.city }}</div>
         <div class="popular-hotels__details">
           <div class="popular-hotels__price">
-            від <span>46747</span> грн
+            від <span>{{ tour.price }}</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <ButtonMore />
+          <BlueButton>Детальніше</BlueButton>
         </div>
       </article>
       <article class="popular-hotels__item">
@@ -46,7 +43,7 @@ import ButtonMore from '../components/ButtonMore.vue'
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <ButtonMore />
+          <BlueButton>Детальніше</BlueButton>
         </div>
       </article>
       <article class="popular-hotels__item">
@@ -67,7 +64,7 @@ import ButtonMore from '../components/ButtonMore.vue'
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <ButtonMore />
+          <BlueButton>Детальніше</BlueButton>
         </div>
       </article>
       <article class="popular-hotels__item">
@@ -88,7 +85,7 @@ import ButtonMore from '../components/ButtonMore.vue'
             від <span>46747</span> грн
             <div class="">за 2 дорослих</div>
           </div>
-          <ButtonMore />
+          <BlueButton>Детальніше</BlueButton>
         </div>
       </article>
     </div>

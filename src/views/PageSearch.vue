@@ -6,12 +6,18 @@ import SearchFilters from '../components/SearchFilters.vue'
 import SearchSort from '../components/SearchSort.vue'
 import ResultsSearch from '../components/ResultsSearch.vue'
 import ShowSearch from '../components/ShowSearch.vue'
+
+import { storeToRefs } from 'pinia'
+import { useToursStore } from '@/stores/tours'
+
+const tourStore = useToursStore()
+
+const { filtredTours } = storeToRefs(tourStore)
 </script>
 <template>
-  <div class="page-search"></div>
   <div class="container">
     <AppHeader class="header" />
-    <h1 class="visually-hidden">This is an about page</h1>
+    <h1 class="visually-hidden">Знайти тур</h1>
     <main class="main-content">
       <AppSearch />
       <ShowSearch />
@@ -20,7 +26,7 @@ import ShowSearch from '../components/ShowSearch.vue'
           <SearchFilters class="page-search__filters" />
           <SearchSort class="page-search__search-sort" />
         </div>
-        <ResultsSearch class="page-search__results" />
+        <ResultsSearch class="page-search__results" :tours="filtredTours" />
       </div>
     </main>
     <AppFooter />
@@ -42,7 +48,9 @@ import ShowSearch from '../components/ShowSearch.vue'
       display: none;
     }
     &__sort {
-      width: 100%;
+      display: block;
+      flex-basis: 300px;
+      flex-shrink: 0;
     }
     &__container {
       display: flex;

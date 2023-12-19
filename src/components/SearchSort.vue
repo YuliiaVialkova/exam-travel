@@ -1,9 +1,19 @@
+<script setup>
+import { useToursStore } from '@/stores/tours'
+
+const tourStore = useToursStore()
+
+const onSelect = function (event) {
+  tourStore.changeSortType(event.target.value)
+}
+</script>
+
 <template>
   <div class="search-sort">
-    <select name="search-sort" id="search-sort" class="search-sort__list">
-      <option value="max-min" class="search-sort__item">За ціною</option>
-      <option value="min-max" class="search-sort__item">За ціною</option>
-      <option value="ratings" class="search-sort__item">За рейтингом</option>
+    <select @change="onSelect" name="search-sort" id="search-sort" class="search-sort__list">
+      <option value="priceToUp" class="search-sort__item">За ціною ↑</option>
+      <option value="priceToDown" class="search-sort__item">За ціною ↓</option>
+      <option value="ratingsToUp" class="search-sort__item">За рейтингом</option>
     </select>
   </div>
 </template>

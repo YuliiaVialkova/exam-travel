@@ -1,6 +1,6 @@
 <template>
   <div class="button-more">
-    <a class="button-more__more-link" href="#">Детальніше</a>
+    <a class="button-more__more-link" href="#"><slot></slot></a>
   </div>
 </template>
 

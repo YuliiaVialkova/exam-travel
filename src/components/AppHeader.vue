@@ -20,6 +20,7 @@ import HeaderContacts from './HeaderContacts.vue'
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba(255, 255, 255);
 
   &__logo {
     order: 2;
@@ -65,7 +66,7 @@ import HeaderContacts from './HeaderContacts.vue'
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1035px) {
   .header {
     flex-wrap: nowrap;
 

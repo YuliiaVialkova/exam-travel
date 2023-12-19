@@ -9,39 +9,33 @@ import AppSearch from '../components/AppSearch.vue'
 </script>
 
 <template>
-  <div class="container">
-    <AppHeader class="header" />
-    <h1 class="visually-hidden">My Dream Place</h1>
-    <main class="main-content">
-      <AppPromo />
-      <AppSearch class="main-search" />
-      <PopularCountries />
-      <GuideBook />
-      <PopularHotels />
-    </main>
-    <AppFooter />
-  </div>
+  <div class="container"><AppHeader class="header" /></div>
+  <h1 class="visually-hidden">My Dream Place</h1>
+  <main class="main-content">
+    <div class="container"><AppPromo /></div>
+    <div class="container"><AppSearch class="main-search" /></div>
+    <div class="container"><PopularCountries /></div>
+    <div class="container"><GuideBook /></div>
+    <div class="container"><PopularHotels /></div>
+  </main>
+  <AppFooter class="footer" />
 </template>
 
 <style lang="scss">
 .container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
+  padding: 0 15px;
   overflow: hidden;
   max-width: 1240px;
   margin: 0 auto;
 }
 .header {
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
-.page-title {
-}
+
 .main-content {
   flex-grow: 1;
 }
 .main-search {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 </style>
