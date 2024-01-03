@@ -8,6 +8,11 @@ export const useToursStore = defineStore('tours', () => {
   const tourPriceFrom = ref(0)
   const tourPriceTo = ref(10000000)
   const partOfTheTitle = ref('')
+  const country = ref('')
+  const departureCity = ref('')
+  const numberTourists = ref(1)
+  const checkInDate = ref(new Date())
+  const checkOutDate = ref(new Date(checkInDate.value.getTime() + 5 * 24 * 60 * 60 * 1000))
 
   const changeSortType = function (newSortType) {
     sortType.value = newSortType
@@ -35,11 +40,32 @@ export const useToursStore = defineStore('tours', () => {
   const filterTitle = function (newFilterTitle) {
     partOfTheTitle.value = newFilterTitle
   }
+  const filterCountry = function (newFilterCountry) {
+    country.value = newFilterCountry
+  }
+  const filterCity = function (newDepartureCity) {
+    departureCity.value = newDepartureCity
+  }
+
+  const filterTourists = function (newNumberTourists) {
+    numberTourists.value = newNumberTourists
+  }
+  const setCheckInDate = function (newCheckInDate) {
+    if (newCheckInDate) {
+      checkInDate.value = new Date(newCheckInDate)
+    }
+  }
+
+  const setCheckOutDate = function (newCheckOutDate) {
+    if (newCheckOutDate) {
+      checkOutDate.value = new Date(newCheckOutDate)
+    }
+  }
 
   const tours = ref([
     {
       id: 1,
-      title: 'Sunrize Arabian Beach Resort',
+      title: 'Sunrize Aqua Park Arabian Beach Resort',
       stars: 3,
       country: 'Єгипет',
       city: 'Шарм Ель Шейх',
@@ -47,27 +73,27 @@ export const useToursStore = defineStore('tours', () => {
       description:
         'Готель категорії 3* розташований в 8 км від аеропорту Шарм-ель-Шейх, в районі Набк, на другій лінії. Невеликий готель, що потопає в зелені, оточить вас домашнім затишком і комфортом. Завбачливий персонал, просторі',
       typeOfFood: 'AI',
-      depatureDate: '13.01.2024',
-      price: 17707,
-      nights: 7,
-      from: 'Київ',
-      reviews: 132
+      price: 2500,
+      nights: 1,
+      from: 'Варшава',
+      reviews: 132,
+      tourists: 1
     },
     {
       id: 2,
       title: 'La Rosa Waves Beach Aqua Park',
-      stars: 5,
+      stars: 4,
       country: 'Єгипет',
       city: 'Шарм Ель Шейх',
       img: '/hotels/La_Rosa_Waves_Beach_Aqua_Park.jpg',
       description:
         'Готель категорії 5* розташований в 8 км від аеропорту Шарм-ель-Шейх, в районі Набк, на другій лінії. Невеликий готель, що потопає в зелені, оточить вас домашнім затишком і комфортом. Завбачливий персонал, просторі',
       typeOfFood: 'HB',
-      depatureDate: '13.01.2024',
-      price: 20000,
-      nights: 5,
+      price: 4500,
+      nights: 1,
       from: 'Варшава',
-      reviews: 126
+      reviews: 126,
+      tourists: 1
     },
     {
       id: 3,
@@ -79,11 +105,43 @@ export const useToursStore = defineStore('tours', () => {
       description:
         'Готель категорії 4* розташований в 8 км від аеропорту Шарм-ель-Шейх, в районі Набк, на другій лінії. Невеликий готель, що потопає в зелені, оточить вас домашнім затишком і комфортом. Завбачливий персонал, просторі',
       typeOfFood: 'AI',
-      depatureDate: '13.01.2024',
-      price: 20900,
+      price: 3000,
       nights: 5,
       from: 'Варшава',
-      reviews: 126
+      reviews: 111,
+      tourists: 1
+    },
+    {
+      id: 4,
+      title: 'Royal Resort Lagoons & Aqua Park',
+      stars: 5,
+      country: 'Єгипет',
+      city: 'Шарм Ель Шейх',
+      img: '/hotels/Royal_Lagoons_Resort_&_Aqua_Park.jpg',
+      description:
+        'Готель категорії 5* розташований в 8 км від аеропорту Шарм-ель-Шейх, в районі Набк, на другій лінії. Невеликий готель, що потопає в зелені, оточить вас домашнім затишком і комфортом. Завбачливий персонал, просторі',
+      typeOfFood: 'AI',
+      price: 4000,
+      nights: 12,
+      from: 'Варшава',
+      reviews: 90,
+      tourists: 1
+    },
+    {
+      id: 5,
+      title: 'Royal Lagoons Resort & Aqua Park',
+      stars: 5,
+      country: 'Туреччина',
+      city: 'Аланія',
+      img: '/hotels/Royal_Lagoons_Resort_&_Aqua_Park.jpg',
+      description:
+        'Готель категорії 5* розташований в 8 км від аеропорту Шарм-ель-Шейх, в районі Набк, на другій лінії. Невеликий готель, що потопає в зелені, оточить вас домашнім затишком і комфортом. Завбачливий персонал, просторі',
+      typeOfFood: 'AI',
+      price: 3500,
+      nights: 12,
+      from: 'Будапешт',
+      reviews: 90,
+      tourists: 1
     }
   ])
 
@@ -112,9 +170,13 @@ export const useToursStore = defineStore('tours', () => {
       return filterStar.value[tour.stars]
     })
 
-    tours = tours.filter((tour) => tour.price >= tourPriceFrom.value)
+    tours = tours.filter(
+      (tour) => tour.price * nights.value * numberTourists.value >= tourPriceFrom.value
+    )
 
-    tours = tours.filter((tour) => tour.price <= tourPriceTo.value)
+    tours = tours.filter((tour) => {
+      return tour.price * nights.value * numberTourists.value <= tourPriceTo.value
+    })
 
     if (!typeOfFood.value.length == 0) {
       tours = tours.filter((tour) => typeOfFood.value.includes(tour.typeOfFood))
@@ -126,7 +188,34 @@ export const useToursStore = defineStore('tours', () => {
       )
     }
 
+    tours = tours.filter((tour) => {
+      if (country.value === '') {
+        return true
+      }
+
+      return country.value === tour.country
+    })
+
+    tours = tours.filter((tour) => {
+      if (departureCity.value === '') {
+        return true
+      }
+      return departureCity.value === tour.from
+    })
+
+    tours = tours.filter((tour) => {
+      if (numberTourists.value === 1) {
+        return true
+      }
+      return (tour.tourists = numberTourists.value)
+    })
+
     return tours
+  })
+
+  const nights = computed(() => {
+    const dateVal = new Date(checkOutDate.value.getTime() - checkInDate.value.getTime())
+    return dateVal.getTime() / (24 * 60 * 60 * 1000)
   })
 
   return {
@@ -137,6 +226,14 @@ export const useToursStore = defineStore('tours', () => {
     filterPriceFrom,
     filterPriceTo,
     filterFood,
-    filterTitle
+    filterTitle,
+    filterCountry,
+    filterCity,
+    filterTourists,
+    setCheckInDate,
+    checkInDate,
+    setCheckOutDate,
+    checkOutDate,
+    nights
   }
 })

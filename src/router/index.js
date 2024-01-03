@@ -16,7 +16,14 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: PageSearch
+      component: PageSearch,
+      props: (route) => ({
+        country: route.query.country,
+        city: route.query.city,
+        tourists: route.query.tourists,
+        check_in_date: route.query.check_in_date,
+        check_out_date: route.query.check_out_date
+      })
     }
   ]
 })

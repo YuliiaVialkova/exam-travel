@@ -92,7 +92,7 @@
     content: '';
     top: 0;
     left: 0;
-    background-color: rgba(20, 20, 20, 0.6);
+    background-color: rgba(9, 81, 176, 0.7);
   }
   &__img-wrp {
     width: 100%;
@@ -135,7 +135,7 @@
 
       &:hover > .guidebook__text {
         display: block;
-        background-color: rgba(20, 20, 20, 0.6);
+        background-color: rgba(9, 81, 176, 0.6);
         height: 30%;
         padding: 5px;
       }

@@ -47,7 +47,7 @@ import IconViber from '../components/icons/IconViber.vue'
 }
 @media screen and (min-width: 992px) {
   .socials-list {
-    &__icon::hover {
+    &__link:hover > &__icon {
       fill: var(--blue-color);
     }
   }

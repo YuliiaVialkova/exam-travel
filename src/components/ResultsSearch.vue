@@ -3,8 +3,57 @@ import PlaneDeparture from '../components/icons/PlaneDeparture.vue'
 import IconComments from '../components/icons/IconComments.vue'
 import BlueButton from '../components/BlueButton.vue'
 import HotelStars from '../components/HotelStars.vue'
+import { useToursStore } from '@/stores/tours'
 
-const props = defineProps(['tours'])
+const toursStore = useToursStore()
+const props = defineProps(['tours', 'nights'])
+
+const touristsString = (count) => {
+  if (count == 1) {
+    return count + ' дорослий'
+  } else {
+    return count + ' дорослих'
+  }
+}
+
+const tourPrice = (base, nights, count) => {
+  return base * nights * count + '₴'
+}
+
+const nightsString = (nights) => {
+  if (nights % 10 == 1 && nights % 100 != 11) {
+    return nights + ' ніч'
+  }
+
+  if (nights % 10 == 1) {
+    return nights + ' ночeй'
+  }
+
+  if (nights % 100 > 11 && nights % 100 < 20) {
+    return nights + ' ночeй'
+  }
+
+  if (nights % 10 > 1 && nights % 10 < 5) {
+    return nights + ' ночі'
+  }
+
+  return nights + ' ночeй'
+}
+
+const typeOfFoodString = (type) => {
+  switch (type) {
+    case 'AI':
+      return 'AI (все включено)'
+    case 'BB':
+      return 'BB (сніданок)'
+    case 'HB':
+      return 'HB (сніданок + вечеря)'
+    case 'FB':
+      return 'FB (3-раз. харчування)'
+    default:
+      return 'OB (без харчування)'
+  }
+}
 </script>
 <template>
   <section class="results-search">
@@ -24,17 +73,17 @@ const props = defineProps(['tours'])
           <a href="/" class="results-search_description_link"> {{ tour.description }}... </a>
         </div>
         <div class="results-search__left-side">
-          <div class="">{{ tour.typeOfFood }}</div>
-          <div class="">{{ tour.depatureDate }}</div>
-          <div class="">{{ tour.nights }} ночей</div>
+          <div class="">{{ typeOfFoodString(tour.typeOfFood) }}</div>
+          <div class="">{{ toursStore.checkInDate.toLocaleDateString() }}</div>
+          <div class="">{{ nightsString(props.nights) }}</div>
           <PlaneDeparture class="results-search__departure_icon" />
           <div class="results-search__departure">{{ tour.from }}</div>
         </div>
         <div class="results-search__right-side">
           <div class="results-search__price">
-            <span>{{ tour.price }} </span>грн
+            <span>{{ tourPrice(tour.price, props.nights, tour.tourists) }}</span>
           </div>
-          <div class="">2 дорослих</div>
+          <div class="results-search__tourists">{{ touristsString(tour.tourists) }}</div>
         </div>
         <div class="results-search__reviews"><IconComments /> {{ tour.reviews }} відгуків</div>
       </div>
