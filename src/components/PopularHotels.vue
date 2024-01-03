@@ -1,8 +1,19 @@
 <script setup>
 import BlueButton from '../components/BlueButton.vue'
 import HotelStars from '../components/HotelStars.vue'
+import { useToursStore } from '@/stores/tours'
+
+const toursStore = useToursStore()
 
 const props = defineProps(['tours'])
+
+const touristsString = (count) => {
+  if (count == 1) {
+    return 'за ' + count + ' дорослого'
+  } else {
+    return 'за ' + count + ' дорослих'
+  }
+}
 </script>
 <template>
   <section class="popular-hotels">
@@ -18,7 +29,7 @@ const props = defineProps(['tours'])
         <div class="popular-hotels__details">
           <div class="popular-hotels__price">
             від <span>{{ tour.price }}</span> грн
-            <div class="">за 2 дорослих</div>
+            <div class="">{{ touristsString(tour.tourists) }}</div>
           </div>
           <BlueButton>Детальніше</BlueButton>
         </div>
