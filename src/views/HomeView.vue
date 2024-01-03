@@ -13,7 +13,7 @@ import { useCountriesStore } from '@/stores/countries'
 import { useDepartureCitiesStore } from '@/stores/departureCities'
 
 const tourStore = useToursStore()
-const { filtredTours } = storeToRefs(tourStore)
+const { topTours } = storeToRefs(tourStore)
 
 const countryStore = useCountriesStore()
 const { countries } = storeToRefs(countryStore)
@@ -32,7 +32,7 @@ const { departureCities } = storeToRefs(departureCityStore)
     </div>
     <div class="container"><PopularCountries /></div>
     <div class="container"><GuideBook /></div>
-    <div class="container"><PopularHotels :tours="filtredTours" /></div>
+    <div class="container"><PopularHotels :tours="topTours" /></div>
   </main>
   <AppFooter class="footer" />
 </template>

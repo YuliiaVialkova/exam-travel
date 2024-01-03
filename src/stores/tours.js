@@ -62,6 +62,12 @@ export const useToursStore = defineStore('tours', () => {
     }
   }
 
+  const topTours = computed(() => {
+    const tTours = tours.value
+    tTours.length = 4
+    return tTours
+  })
+
   const tours = ref([
     {
       id: 1,
@@ -234,6 +240,7 @@ export const useToursStore = defineStore('tours', () => {
     checkInDate,
     setCheckOutDate,
     checkOutDate,
-    nights
+    nights,
+    topTours
   }
 })
