@@ -16,10 +16,13 @@ import IconSign from '../components/icons/IconSign.vue'
 
 <style lang="scss">
 .header-auth {
-  display: none;
+  display: block;
+  order: 3;
 
   &__icon {
-    display: none;
+    display: block;
+    width: 24px;
+    height: 24px;
   }
   &__register {
     display: none;
@@ -55,8 +58,6 @@ import IconSign from '../components/icons/IconSign.vue'
     display: block;
     &__icon {
       display: block;
-      width: 24px;
-      height: 24px;
     }
   }
 }

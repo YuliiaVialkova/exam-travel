@@ -27,7 +27,7 @@ import HeaderContacts from './HeaderContacts.vue'
   }
 
   &__contacts {
-    order: 3;
+    display: none;
   }
 }
 
@@ -36,6 +36,11 @@ import HeaderContacts from './HeaderContacts.vue'
     gap: 30px;
 
     &__auth {
+      order: 3;
+      margin-left: auto;
+    }
+    &__contacts {
+      display: block;
       order: 4;
     }
   }

@@ -56,9 +56,7 @@ const menuClasses = computed(() => {
       left: 0;
     }
   }
-  &__item {
-    padding: 10px;
-  }
+
   &__link {
     text-decoration: none;
     color: inherit;
@@ -77,6 +75,7 @@ const menuClasses = computed(() => {
       margin: 0;
       height: auto;
       width: auto;
+      transition: none;
     }
 
     &__item {

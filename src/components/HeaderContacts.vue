@@ -11,23 +11,23 @@ import ContactsPhones from '../components/ContactsPhones.vue'
 </template>
 
 <style lang="scss">
-.header-contacts {
-  &__icon {
-    width: 24px;
-    height: 24px;
-  }
-  &__tel {
-    display: none;
-  }
-}
 @media screen and (min-width: 433px) {
   .header-contacts {
-    margin-left: auto;
+    &__icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+    &__tel {
+      display: none;
+    }
   }
 }
-@media screen and (min-width: 653px) {
+@media screen and (min-width: 560px) {
   .header-contacts {
-    display: none;
+    &__tel {
+      display: none;
+    }
 
     &__icon {
       display: none;
